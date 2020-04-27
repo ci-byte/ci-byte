@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;  
+}
+body {
+    font-family: sans-serif;
+    margin: 0 auto;
+    background-color: gray;
+    /* removed fixed width of 1200px to make it mobile-friendly */
+}
+header {
+    align-items: center;
+    display: none; /* formerly flex */
+    /*margin-bottom: 25px; */
+}
+/*nav {
+    margin-left: 30px;
+    margin-top: 20px;
+} */
+.product-cards {
+    /* display: grid; */
+    grid-template-columns: auto auto auto auto;
+    margin-bottom: 30px; 
+}
+/* Key Frames Animation */
+@keyframes productCards {
+    from { 
+        background-color: white;
+        color: black;
+        border-width: 1px;
+        padding: 15px;
+    }
+    to {
+        background-color: black;
+        color: white;
+        border-width: 5px;
+        padding: 11px;
+    }
+}
+/* Product CSS */
+.product-card {
+    /* display: inline-block; */
+    border: 1px solid black;
+    padding: 15px;
+    }
+.product-card:hover {
+    animation: productCards 2s;
+}
+.product-card:hover a {
+    color: white;
+}
+.product-card img {
+    width: 100%
+}
+.product-card h2 {
+    margin: 30px 0 15px;
+    }
+    .product-card a {
+    color: black;
+    text-decoration: none;
+    }
+    .product-card p {
+    line-height: 1.5
+    }
+    .original-price {
+    color: gray;
+    text-transform: uppercase;
+    }
+    .current-price span {
+    font-weight: bold;
+    text-decoration: underline;
+    }
+    .saving {
+    color: #85bb65 ;
+    }
+    /* Breadcrumb CSS */
+    .breadcrumb {
+    display: flex;
+    list-style: none;
+    background-color: #85bb65;
+    align-items: center;
+    justify-content: center;
+    }
+    .breadcrumb li {
+    padding: 10px;
+    } 
+    .breadcrumb li:after {
+    content: '';
+    margin-left: 20px;
+    } 
+    .breadcrumb li:last-child:after {
+    content: '';
+    margin-left: 20px;
+    } 
+    .breadcrumb a {
+    color: black;
+    text-decoration: none;
+    }
+    .breadcrumb a:hover {
+    text-decoration: none;
+    }
+    /* Navigation CSS */
+    nav ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+    }
+    nav a {
+        color: white;
+        font-weight: bold;
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
+    nav a:hover {
+        text-decoration: underline;
+        color: green;
+    }
+    /* Text CSS */
+    .intro {
+            /*margin: 30px 0; */
+            margin-top: 15px;
+            margin-bottom: 30px;
+            padding-left: 10px;
+            width: 50%;
+        }
+        .intro h1 {
+            margin-bottom: 15px;
+        }
+        .intro p {
+            line-height: 1.5;
+        }
+    footer {
+        margin: 30px 0;
+        padding-left: 10px;
+        width: 50%
+    }
+    /* Mobile Response */
+        @media(min-width: 768px) {
+            header {
+                align-items: center;
+                display: flex;
+            }
+            /* Navigation CSS */
+            /*nav {
+                background: transparent;
+                margin-top: 20px;
+                margin-left: 30px;
+            }*/
+            nav ul {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                justify-content: center;
+            }
+            nav a {
+                color: black;
+                position: relative;
+                transition: top .5s, color .5s;
+            }
+            nav a:hover {
+                color: green;
+                /*top: -10px; */
+                text-decoration: none;
+            }
+            /* Text CSS */
+            .intro {
+                width: 50%;
+            }
+            /* Product CSS */
+            .product-cards {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+            }
+            .product-card {
+                display: inline-block;
+            }
+            /* Breadcrumb CSS */
+            .breadcrumb li:after {
+                margin-left: 0px;
+            }
+            .breadcrumb li:last-child:after {
+                margin-left: 0px;
+            }
+        }        
